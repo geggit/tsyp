@@ -23392,3 +23392,1857 @@ C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unex
 Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
 Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (30.0ms)
 Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:04:08 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (50.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (1962.8ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (40.1ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (530.8ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+ERROR: compiling _app_views_layouts__header_html_erb___635288376_37709736_323926 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_layouts__header_html_erb___635288376_37709736_323926(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/_header";_old_output_buffer = @output_buffer;header = local_assigns[:header];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<header>
+  ');@output_buffer.append= ( link_to logo, root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <nav class="round">
+    <ul>
+      <li>');@output_buffer.append= ( link_to "Ballina", root_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Anëtaret", users_path );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Profili", current_user );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Editime", edit_user_path(current_user) );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Ndihmë", help_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Dil jashte", signout_path, :method => :delete );@output_buffer.safe_concat('</li>
+');       else 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Hyni brenda", signin_path );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('    </ul>
+  </nav>
+</header>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_36472140_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/layouts.rb:80:in `_render_layout'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:62:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__367793087__process_action__516519628__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (2703.9ms)
+Completed   in 3846ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'):
+    10:       <% end %>
+    11:       <li><%= link_to "Ndihmë", help_path %></li>
+    12:       <% if signed_in? %>
+    13:       <li><%= link_to "Dil jashte", signout_path, :method => :delete %></li>
+    14:       <% else %>
+    15:       <li><%= link_to "Hyni brenda", signin_path %></li>
+    16:       <% end %>
+  app/views/layouts/_header.html.erb:15:in `compile'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_36472140_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.1ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:09:27 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (1041.5ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (50.1ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (30.0ms)
+ERROR: compiling _app_views_layouts__header_html_erb___635288376_36855840_323926 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_layouts__header_html_erb___635288376_36855840_323926(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/_header";_old_output_buffer = @output_buffer;header = local_assigns[:header];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<header>
+  ');@output_buffer.append= ( link_to logo, root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <nav class="round">
+    <ul>
+      <li>');@output_buffer.append= ( link_to "Ballina", root_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Anëtaret", users_path );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Profili", current_user );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Editime", edit_user_path(current_user) );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Ndihmë", help_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Dil jashte", signout_path, :method => :delete );@output_buffer.safe_concat('</li>
+');       else 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Hyni brenda", signin_path );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('    </ul>
+  </nav>
+</header>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_37176252_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/layouts.rb:80:in `_render_layout'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:62:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__367793087__process_action__516519628__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered layouts/_header.html.erb (120.2ms)
+Rendered pages/home.html.erb within layouts/application (1572.3ms)
+Completed   in 2403ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'):
+    10:       <% end %>
+    11:       <li><%= link_to "Ndihmë", help_path %></li>
+    12:       <% if signed_in? %>
+    13:       <li><%= link_to "Dil jashte", signout_path, :method => :delete %></li>
+    14:       <% else %>
+    15:       <li><%= link_to "Hyni brenda", signin_path %></li>
+    16:       <% end %>
+  app/views/layouts/_header.html.erb:15:in `compile'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_37176252_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (140.2ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (200.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:09:46 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (190.3ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (480.7ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+ERROR: compiling _app_views_layouts__header_html_erb___635288376_37808784_323926 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_layouts__header_html_erb___635288376_37808784_323926(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/_header";_old_output_buffer = @output_buffer;header = local_assigns[:header];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<header>
+  ');@output_buffer.append= ( link_to logo, root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <nav class="round">
+    <ul>
+      <li>');@output_buffer.append= ( link_to "Ballina", root_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Anëtaret", users_path );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Profili", current_user );@output_buffer.safe_concat('</li>
+      <li>');@output_buffer.append= ( link_to "Editime", edit_user_path(current_user) );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Ndihmë", help_path );@output_buffer.safe_concat('</li>
+');       if signed_in? 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Dil jashte", signout_path, :method => :delete );@output_buffer.safe_concat('</li>
+');       else 
+@output_buffer.safe_concat('      <li>');@output_buffer.append= ( link_to "Hyni brenda", signin_path );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('    </ul>
+  </nav>
+</header>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_36808764_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/layouts.rb:80:in `_render_layout'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:62:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__367793087__process_action__516519628__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (851.2ms)
+Completed   in 1252ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append= ( link_to "Dil jashte", signout_path, :metho...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to "Hyni brenda", signin_path );@outpu...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: unterminated string meets end of file
+C:/RAILS_PROJECTS/tsyp/app/views/layouts/_header.html.erb:15: syntax error, unexpected $end, expecting ')'):
+    10:       <% end %>
+    11:       <li><%= link_to "Ndihmë", help_path %></li>
+    12:       <% if signed_in? %>
+    13:       <li><%= link_to "Dil jashte", signout_path, :method => :delete %></li>
+    14:       <% else %>
+    15:       <li><%= link_to "Hyni brenda", signin_path %></li>
+    16:       <% end %>
+  app/views/layouts/_header.html.erb:15:in `compile'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__862651480_36808764_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.1ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (100.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:10:41 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (90.1ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (480.7ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (110.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (881.3ms)
+Completed 200 OK in 1943ms (Views: 931.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:13:21 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered shared/_micropost_form.html.erb (560.8ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (921.3ms)
+Completed 200 OK in 2363ms (Views: 1001.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:13:31 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+Rendered shared/_feed.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (440.6ms)
+Completed 200 OK in 1642ms (Views: 490.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:13:39 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/index.html.erb within layouts/application (160.2ms)
+Completed 200 OK in 611ms (Views: 240.3ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:13:49 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (280.4ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (490.7ms)
+Completed 200 OK in 1292ms (Views: 661.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:13:58 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (20.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (681.0ms)
+Completed 200 OK in 3024ms (Views: 791.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for 127.0.0.1 at Thu Oct 13 03:14:16 +0200 2011
+  Processing by PagesController#help as HTML
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered layouts/_header.html.erb (761.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/help.html.erb within layouts/application (851.2ms)
+Completed 200 OK in 931ms (Views: 921.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signout" for 127.0.0.1 at Thu Oct 13 03:14:22 +0200 2011
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kJNOn0wyFC1fCNuPwqLWRjC49Ewsob++Oz2y6mlP74U="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms
+
+
+Started POST "/signout" for 127.0.0.1 at Thu Oct 13 03:14:22 +0200 2011
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kJNOn0wyFC1fCNuPwqLWRjC49Ewsob++Oz2y6mlP74U="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:14:23 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (40.1ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (140.2ms)
+Completed 200 OK in 1833ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at Thu Oct 13 03:15:19 +0200 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (480.7ms)
+Rendered layouts/_footer.html.erb (20.0ms)
+Rendered sessions/new.html.erb within layouts/application (640.9ms)
+Completed 200 OK in 751ms (Views: 741.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Thu Oct 13 03:15:47 +0200 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Hyni brenda", "session"=>{"password"=>"[FILTERED]", "email"=>"ronbeli@hotmail.com"}, "authenticity_token"=>"kJNOn0wyFC1fCNuPwqLWRjC49Ewsob++Oz2y6mlP74U=", "utf8"=>"âœ“"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ronbeli@hotmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/104
+Completed 302 Found in 3104ms
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:15:51 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (70.1ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (170.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (1331.9ms)
+Completed 200 OK in 3014ms (Views: 1602.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:16:00 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (40.1ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (871.3ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (40.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (170.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (1472.1ms)
+Completed 200 OK in 4126ms (Views: 1692.4ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:16:11 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (40.1ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (661.0ms)
+Completed 200 OK in 3245ms (Views: 751.1ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:16:21 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (190.3ms)
+Completed 200 OK in 1272ms (Views: 350.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:23:19 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (60.1ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (560.8ms)
+Completed 200 OK in 831ms (Views: 620.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Oct 13 03:23:34 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered shared/_micropost_form.html.erb (1321.9ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (40.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (1692.4ms)
+Completed 200 OK in 2103ms (Views: 1762.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:23:44 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (30.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 4577ms (Views: 681.0ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:23:54 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (701.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (901.3ms)
+Completed 200 OK in 1262ms (Views: 971.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:24:26 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (180.3ms)
+Completed 200 OK in 431ms (Views: 240.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for 127.0.0.1 at Thu Oct 13 03:24:37 +0200 2011
+  Processing by PagesController#help as HTML
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered layouts/_header.html.erb (330.5ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/help.html.erb within layouts/application (420.6ms)
+Completed 200 OK in 531ms (Views: 510.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:24:43 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/edit.html.erb within layouts/application (260.4ms)
+Completed 200 OK in 621ms (Views: 360.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:24:50 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (140.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (320.5ms)
+Completed 200 OK in 681ms (Views: 380.5ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:30:04 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (320.5ms)
+Completed 200 OK in 611ms (Views: 360.5ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:30:31 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (150.2ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (330.5ms)
+Completed 200 OK in 661ms (Views: 400.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:31:19 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+ERROR: compiling _app_views_shared__stats_html_erb___15866268_36973932_1203766 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_shared__stats_html_erb___15866268_36973932_1203766(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "shared/_stats";_old_output_buffer = @output_buffer;stats = local_assigns[:stats];;@output_buffer = ActionView::OutputBuffer.new; @user ||= current_user 
+@output_buffer.safe_concat('<div class="stats">
+  <table summary="User stats">
+    <tr>
+      <td>
+        <a href="');@output_buffer.append= ( following_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="following" class="stat">
+            ');@output_buffer.append= ( @user.following.count );@output_buffer.safe_concat(' following
+          </span>
+        </a>
+      </td>
+      <td>
+        <a href="');@output_buffer.append= ( followers_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="followers" class="stat">
+            ');@output_buffer.append= ( (@user.followers.count, "follower") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('          </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_37055592_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__453433196__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered shared/_stats.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (80.1ms)
+Completed   in 441ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'):
+    12:       <td>
+    13:         <a href="<%= followers_user_path(@user) %>">
+    14:           <span id="followers" class="stat">
+    15:             <%= (@user.followers.count, "follower") %>
+    16:           </span>
+    17:         </a>
+    18:       </td>
+  app/views/shared/_stats.html.erb:24:in `compile'
+  app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_37055592_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (30.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.1ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:33:03 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+ERROR: compiling _app_views_shared__stats_html_erb___15866268_37632612_1203766 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_shared__stats_html_erb___15866268_37632612_1203766(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "shared/_stats";_old_output_buffer = @output_buffer;stats = local_assigns[:stats];;@output_buffer = ActionView::OutputBuffer.new; @user ||= current_user 
+@output_buffer.safe_concat('<div class="stats">
+  <table summary="User stats">
+    <tr>
+      <td>
+        <a href="');@output_buffer.append= ( following_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="following" class="stat">
+            ');@output_buffer.append= ( @user.following.count );@output_buffer.safe_concat(' following
+          </span>
+        </a>
+      </td>
+      <td>
+        <a href="');@output_buffer.append= ( followers_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="followers" class="stat">
+            ');@output_buffer.append= ( (@user.followers.count, "follower") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('          </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_37697940_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__453433196__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered shared/_stats.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (80.1ms)
+Completed   in 751ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'):
+    12:       <td>
+    13:         <a href="<%= followers_user_path(@user) %>">
+    14:           <span id="followers" class="stat">
+    15:             <%= (@user.followers.count, "follower") %>
+    16:           </span>
+    17:         </a>
+    18:       </td>
+  app/views/shared/_stats.html.erb:24:in `compile'
+  app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_37697940_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.1ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (120.2ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:33:09 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+ERROR: compiling _app_views_shared__stats_html_erb___15866268_36387708_1203766 RAISED compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_shared__stats_html_erb___15866268_36387708_1203766(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "shared/_stats";_old_output_buffer = @output_buffer;stats = local_assigns[:stats];;@output_buffer = ActionView::OutputBuffer.new; @user ||= current_user 
+@output_buffer.safe_concat('<div class="stats">
+  <table summary="User stats">
+    <tr>
+      <td>
+        <a href="');@output_buffer.append= ( following_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="following" class="stat">
+            ');@output_buffer.append= ( @user.following.count );@output_buffer.safe_concat(' following
+          </span>
+        </a>
+      </td>
+      <td>
+        <a href="');@output_buffer.append= ( followers_user_path(@user) );@output_buffer.safe_concat('">
+          <span id="followers" class="stat">
+            ');@output_buffer.append= ( (@user.followers.count, "follower") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('          </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+C:/RAILS_PROJECTS/tsyp/app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_36451728_0'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__453433196__callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered shared/_stats.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (100.1ms)
+Completed   in 421ms
+
+ActionView::Template::Error (compile error
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:15: syntax error, unexpected ')', expecting tCOLON2 or '[' or '.'
+...r.followers.count, "follower") );@output_buffer.safe_concat(...
+                              ^
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:22: syntax error, unexpected kENSURE, expecting ')'
+C:/RAILS_PROJECTS/tsyp/app/views/shared/_stats.html.erb:24: syntax error, unexpected kEND, expecting ')'):
+    12:       <td>
+    13:         <a href="<%= followers_user_path(@user) %>">
+    14:           <span id="followers" class="stat">
+    15:             <%= (@user.followers.count, "follower") %>
+    16:           </span>
+    17:         </a>
+    18:       </td>
+  app/views/shared/_stats.html.erb:24:in `compile'
+  app/views/users/show.html.erb:21:in `_app_views_users_show_html_erb__594798225_36451728_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.1ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (470.7ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:33:58 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (140.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (50.1ms)
+Rendered users/show.html.erb within layouts/application (370.5ms)
+Completed 200 OK in 661ms (Views: 410.6ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:34:21 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (310.4ms)
+Completed 200 OK in 621ms (Views: 370.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:35:00 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (290.4ms)
+Completed 200 OK in 611ms (Views: 370.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:35:42 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (140.2ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (300.4ms)
+Completed 200 OK in 611ms (Views: 380.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:36:44 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (300.4ms)
+Completed 200 OK in 601ms (Views: 360.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:36:54 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (10.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (140.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (330.5ms)
+Completed 200 OK in 631ms (Views: 400.6ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:37:24 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (310.4ms)
+Completed 200 OK in 621ms (Views: 380.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:38:21 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (300.4ms)
+Completed 200 OK in 601ms (Views: 340.5ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:38:53 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 461ms (Views: 240.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/94" for 127.0.0.1 at Thu Oct 13 03:38:59 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 94 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 94) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mRelationship Load (20.0ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 94 AND ("relationships".follower_id = 104) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 94 AND ("relationships".follower_id = 104) LIMIT 1
+Rendered users/_unfollow.html.erb (80.1ms)
+Rendered users/_follow_form.html.erb (210.3ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 94)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 94)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 94))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 94))
+Rendered shared/_stats.html.erb (50.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (440.6ms)
+Completed 200 OK in 1152ms (Views: 510.7ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:39:09 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (50.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 451ms (Views: 240.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/95" for 127.0.0.1 at Thu Oct 13 03:39:15 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"95"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 95 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 95) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mRelationship Load (0.0ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 95 AND ("relationships".follower_id = 104) LIMIT 1
+Rendered users/_follow.html.erb (70.1ms)
+Rendered users/_follow_form.html.erb (180.3ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 95)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 95)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 95))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 95))
+Rendered shared/_stats.html.erb (70.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (440.6ms)
+Completed 200 OK in 1142ms (Views: 500.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/relationships" for 127.0.0.1 at Thu Oct 13 03:39:25 +0200 2011
+  Processing by RelationshipsController#create as JS
+  Parameters: {"commit"=>"Percjelle", "relationship"=>{"followed_id"=>"95"}, "authenticity_token"=>"kJNOn0wyFC1fCNuPwqLWRjC49Ewsob++Oz2y6mlP74U=", "utf8"=>"âœ“"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 95 LIMIT 1
+  [1m[36mAREL (160.2ms)[0m  [1mINSERT INTO "relationships" ("created_at", "updated_at", "follower_id", "followed_id") VALUES ('2011-10-13 01:39:27.657603', '2011-10-13 01:39:27.657603', 104, 95)[0m
+  [1m[35mRelationship Load (0.0ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 95 AND ("relationships".follower_id = 104) LIMIT 1
+Rendered users/_unfollow.html.erb (10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 95))[0m
+Rendered relationships/create.js.erb (60.1ms)
+Completed 200 OK in 3415ms (Views: 1181.7ms | ActiveRecord: 160.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:39:38 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (190.3ms)
+Completed 200 OK in 1021ms (Views: 260.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/98" for 127.0.0.1 at Thu Oct 13 03:39:46 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"98"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 98 LIMIT 1
+  [1m[36mMicropost Load (20.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 98) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mRelationship Load (0.0ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 98 AND ("relationships".follower_id = 104) LIMIT 1[0m
+Rendered users/_follow.html.erb (80.1ms)
+Rendered users/_follow_form.html.erb (2373.4ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 98)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 98)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 98))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 98))[0m
+Rendered shared/_stats.html.erb (50.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (10.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (2703.9ms)
+Completed 200 OK in 4617ms (Views: 2944.2ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/relationships" for 127.0.0.1 at Thu Oct 13 03:39:55 +0200 2011
+  Processing by RelationshipsController#create as JS
+  Parameters: {"commit"=>"Percjelle", "relationship"=>{"followed_id"=>"98"}, "authenticity_token"=>"kJNOn0wyFC1fCNuPwqLWRjC49Ewsob++Oz2y6mlP74U=", "utf8"=>"âœ“"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 98 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "relationships" ("updated_at", "followed_id", "created_at", "follower_id") VALUES ('2011-10-13 01:39:56.499075', 98, '2011-10-13 01:39:56.499075', 104)
+  [1m[36mRelationship Load (10.0ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 98 AND ("relationships".follower_id = 104) LIMIT 1[0m
+Rendered users/_unfollow.html.erb (10.0ms)
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 98))
+Rendered relationships/create.js.erb (60.1ms)
+Completed 200 OK in 1001ms (Views: 150.2ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Thu Oct 13 03:40:02 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (721.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (1301.9ms)
+Completed 200 OK in 1592ms (Views: 1372.0ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Thu Oct 13 03:40:14 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (160.2ms)
+Completed 200 OK in 431ms (Views: 220.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:40:24 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 451ms (Views: 240.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Oct 13 03:43:14 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (30.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (150.2ms)
+Completed 200 OK in 791ms (Views: 230.3ms | ActiveRecord: 0.0ms)
