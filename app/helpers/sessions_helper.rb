@@ -34,7 +34,7 @@ module SessionsHelper
 
   def deny_access
     store_location
-    redirect_to signin_path, :notice => "Ju lutemi hyni brenda së pari."
+    redirect_to signin_path, :notice => "Ju lutemi hyni brenda se pari."
   end
 
 
