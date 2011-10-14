@@ -27300,3 +27300,119 @@ Rendered layouts/_header.html.erb (30.0ms)
 Rendered layouts/_footer.html.erb (0.0ms)
 Rendered users/show.html.erb within layouts/application (1562.2ms)
 Completed 200 OK in 2083ms (Views: 1672.4ms | ActiveRecord: 40.1ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:08:29 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (1362.0ms)
+Completed   in 1803ms
+
+ActionView::Template::Error (undefined local variable or method `kalimit' for #<#<Class:0x4616a00>:0x4615158>):
+    11:     <%= f.text_field :email %>
+    12:   </div>
+    13:   <div class="field">
+    14:     <%= Fjala e kalimit %><br />
+    15:     <%= f.password_field :password %>
+    16:   </div>
+    17:   <div class="field">
+  app/views/users/edit.html.erb:14:in `_app_views_users_edit_html_erb___989911554_36739944_0'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb___989911554_36739944_0'
+
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.1ms)
+Rendered C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (140.2ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:10:15 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (30.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (190.3ms)
+Completed 200 OK in 791ms (Views: 260.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:18:34 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (50.1ms)
+Rendered layouts/_stylesheets.html.erb (60.1ms)
+Rendered layouts/_header.html.erb (370.5ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (901.3ms)
+Completed 200 OK in 2644ms (Views: 1121.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:20:06 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/edit.html.erb within layouts/application (160.2ms)
+Completed 200 OK in 451ms (Views: 220.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:22:05 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (150.2ms)
+Completed 200 OK in 421ms (Views: 210.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:35:48 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (140.2ms)
+Completed 200 OK in 431ms (Views: 230.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:36:26 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (140.2ms)
+Completed 200 OK in 801ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/104/edit" for 127.0.0.1 at Sat Oct 15 00:37:22 +0200 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/edit.html.erb within layouts/application (140.2ms)
+Completed 200 OK in 811ms (Views: 210.3ms | ActiveRecord: 0.0ms)
