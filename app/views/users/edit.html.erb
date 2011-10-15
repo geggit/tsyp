@@ -3,19 +3,19 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <div><b> Emri: </b><div>
+    <div> Emri: <div>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <div><b> Email-i: </b><div>
+    <div> Email-i: <div>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <div><b> Fjala e kalimit: </b><div>
+    <div> Fjala e kalimit: <div>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <div><b> Perseriteni fjalen e kalimit: </b><div>
+    <div> Perseriteni fjalen e kalimit: <div>
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
