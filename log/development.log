@@ -27588,3 +27588,482 @@ Rendered layouts/_header.html.erb (20.0ms)
 Rendered layouts/_footer.html.erb (10.0ms)
 Rendered users/show_follow.html.erb within layouts/application (280.4ms)
 Completed 200 OK in 1462ms (Views: 350.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:01:29 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (130.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (70.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (560.8ms)
+Completed 200 OK in 1662ms (Views: 671.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at Mon Oct 24 14:02:28 +0200 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (1382.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered sessions/new.html.erb within layouts/application (1532.2ms)
+Completed 200 OK in 1622ms (Views: 1612.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon Oct 24 14:02:48 +0200 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Hyni brenda", "session"=>{"password"=>"[FILTERED]", "email"=>"ronbeli@hotmail.com"}, "authenticity_token"=>"BWQ9T0emmdsv2wgc4AzpkfTZ2NjY2mYLxGIUgVdjVC8=", "utf8"=>"✓"}
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ronbeli@hotmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/104
+Completed 302 Found in 651ms
+
+
+Started GET "/users/104" for 127.0.0.1 at Mon Oct 24 14:02:49 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (30.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (180.3ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (410.6ms)
+Completed 200 OK in 1552ms (Views: 480.7ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:02:56 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (110.2ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (250.4ms)
+Rendered layouts/_footer.html.erb (60.1ms)
+Rendered pages/home.html.erb within layouts/application (761.1ms)
+Completed 200 OK in 1522ms (Views: 811.2ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Oct 24 14:03:08 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (40.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (160.2ms)
+Completed 200 OK in 551ms (Views: 270.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:03:22 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (80.1ms)
+Rendered shared/_feed.html.erb (0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (310.4ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (781.1ms)
+Completed 200 OK in 1482ms (Views: 841.2ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at Mon Oct 24 14:03:36 +0200 2011
+  Processing by MicropostsController#create as HTML
+  Parameters: {"commit"=>"Publikoje", "micropost"=>{"content"=>"Test."}, "authenticity_token"=>"BWQ9T0emmdsv2wgc4AzpkfTZ2NjY2mYLxGIUgVdjVC8=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mAREL (40.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "updated_at", "created_at") VALUES ('Test.', 104, '2011-10-24 12:03:36.926328', '2011-10-24 12:03:36.926328')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 561ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:03:37 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (90.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_feed_item.html.erb (190.3ms)
+Rendered shared/_feed.html.erb (260.4ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (150.2ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (711.0ms)
+Completed 200 OK in 1843ms (Views: 781.1ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at Mon Oct 24 14:03:53 +0200 2011
+  Processing by MicropostsController#create as HTML
+  Parameters: {"commit"=>"Publikoje", "micropost"=>{"content"=>"Test 2."}, "authenticity_token"=>"BWQ9T0emmdsv2wgc4AzpkfTZ2NjY2mYLxGIUgVdjVC8=", "utf8"=>"✓"}
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "microposts" ("user_id", "content", "updated_at", "created_at") VALUES (104, 'Test 2.', '2011-10-24 12:03:55.202608', '2011-10-24 12:03:55.202608')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 451ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:03:55 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (470.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (80.1ms)
+Rendered shared/_feed.html.erb (110.2ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (921.3ms)
+Completed 200 OK in 2514ms (Views: 981.4ms | ActiveRecord: 10.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110501095440)
+Migrating to AddEmailUniquenessIndex (20110507231055)
+Migrating to AddPasswordToUsers (20110508084223)
+Migrating to AddSaltToUsers (20110508171255)
+Migrating to AddAdminToUsers (20110521065509)
+Migrating to CreateMicroposts (20110522152030)
+Migrating to CreateRelationships (20110524213903)
+Migrating to CreateComments (20111024120912)
+  [1m[35mSQL (40.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (50.1ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "text" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111024120912')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (110.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("comments")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_microposts_on_user_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:11:17 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (80.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_feed_item.html.erb (50.1ms)
+Rendered shared/_feed.html.erb (80.1ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (120.2ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (20.0ms)
+Rendered pages/home.html.erb within layouts/application (560.8ms)
+Completed 200 OK in 2403ms (Views: 620.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 14:13:04 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (50.1ms)
+Rendered shared/_feed.html.erb (90.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (1241.8ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (1632.3ms)
+Completed 200 OK in 1983ms (Views: 1702.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 15:53:31 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (130.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (110.2ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (22462.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_feed_item.html.erb (270.4ms)
+Rendered shared/_feed.html.erb (320.5ms)
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (40.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (160.2ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (40.1ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (23844.3ms)
+Completed 200 OK in 88157ms (Views: 25026.0ms | ActiveRecord: 250.4ms)
+  [1m[36mSQL (10.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (10.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateComments (20111024120912)
+  [1m[35mSQL (10.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (130.2ms)[0m  [1mDROP TABLE "comments"[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20111024120912'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("microposts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_microposts_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 16:09:13 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (50.1ms)
+Rendered shared/_feed.html.erb (70.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (130.2ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (490.7ms)
+Completed 200 OK in 1612ms (Views: 550.8ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 16:09:25 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (10.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered shared/_feed_item.html.erb (70.1ms)
+Rendered shared/_feed.html.erb (90.1ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+Rendered shared/_user_info.html.erb (20.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (771.1ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (240.3ms)
+Rendered layouts/_footer.html.erb (100.1ms)
+Rendered pages/home.html.erb within layouts/application (1652.4ms)
+Completed 200 OK in 1963ms (Views: 1712.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Oct 24 16:09:35 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (50.1ms)
+Rendered layouts/_stylesheets.html.erb (0.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 471ms (Views: 250.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/94" for 127.0.0.1 at Mon Oct 24 16:09:52 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[35mUser Load (10.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 94 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 94) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mRelationship Load (30.0ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 94 AND ("relationships".follower_id = 104) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_id" = 94 AND ("relationships".follower_id = 104) LIMIT 1
+Rendered users/_unfollow.html.erb (100.1ms)
+Rendered users/_follow_form.html.erb (240.3ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 94)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 94)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 94))[0m
+  [1m[35mSQL (10.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 94))
+Rendered shared/_stats.html.erb (290.4ms)
+Rendered layouts/_stylesheets.html.erb (20.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered users/show.html.erb within layouts/application (1051.5ms)
+Completed 200 OK in 1422ms (Views: 1121.6ms | ActiveRecord: 60.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Oct 24 16:09:59 +0200 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (580.8ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (440.6ms)
+Rendered layouts/_footer.html.erb (80.1ms)
+Rendered users/index.html.erb within layouts/application (1392.0ms)
+Completed 200 OK in 1813ms (Views: 1572.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at Mon Oct 24 16:10:07 +0200 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (10.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE ("microposts".user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered users/_follow_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+Rendered microposts/_micropost.html.erb (120.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))[0m
+Rendered shared/_stats.html.erb (180.3ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered users/show.html.erb within layouts/application (620.9ms)
+Completed 200 OK in 921ms (Views: 681.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 16:10:12 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mMicropost Load (10.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (10.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (60.1ms)
+Rendered shared/_feed.html.erb (80.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (510.7ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (10.0ms)
+Rendered pages/home.html.erb within layouts/application (881.3ms)
+Completed 200 OK in 1212ms (Views: 941.4ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at Mon Oct 24 16:10:24 +0200 2011
+  Processing by MicropostsController#create as HTML
+  Parameters: {"commit"=>"Publikoje", "micropost"=>{"content"=>"Test 3."}, "authenticity_token"=>"BWQ9T0emmdsv2wgc4AzpkfTZ2NjY2mYLxGIUgVdjVC8=", "utf8"=>"✓"}
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mAREL (20.0ms)[0m  INSERT INTO "microposts" ("user_id", "content", "updated_at", "created_at") VALUES (104, 'Test 3.', '2011-10-24 14:10:28.981926', '2011-10-24 14:10:28.981926')
+Redirected to http://localhost:3000/
+Completed 302 Found in 4296ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 24 16:10:29 +0200 2011
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mMicropost Load (0.0ms)[0m  SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 104) OR user_id = 104) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered shared/_micropost_form.html.erb (100.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 104 LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (90.1ms)
+Rendered shared/_feed.html.erb (100.1ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 104)
+Rendered shared/_user_info.html.erb (30.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 104))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 104))
+Rendered shared/_stats.html.erb (2143.1ms)
+Rendered layouts/_stylesheets.html.erb (10.0ms)
+Rendered layouts/_header.html.erb (20.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (2543.7ms)
+Completed 200 OK in 2934ms (Views: 2623.8ms | ActiveRecord: 0.0ms)
