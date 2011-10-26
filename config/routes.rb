@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "comments/create"
+
+  get "comments/destroy"
+
   get "sessions/new"
 
   resources :users do
@@ -8,7 +12,11 @@ SampleApp::Application.routes.draw do
   end
 
   resources :sessions,      :only => [:new, :create, :destroy]
-  resources :microposts,    :only => [:create, :destroy]
+  resources :microposts do
+    (resources :comments, :only => [:create, :destroy])
+  end
+
+#  :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
 
 

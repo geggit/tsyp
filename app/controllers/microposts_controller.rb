@@ -13,11 +13,16 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def show
+     @micropost = current_user.microposts.build(params[:micropost])
+     
+  end
+
   def destroy
     @micropost.destroy
     redirect_back_or root_path
   end
-  
+
   private
 
     def authorized_user
